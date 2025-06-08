@@ -51,6 +51,10 @@ body {
     color: var(--text-light-color);
 }
 
+.text-color {
+    color: var(--text-color);
+}
+
 .accent-color {
     color: var(--accent);
 }
@@ -226,10 +230,24 @@ body {
     z-index: 10;
 }
 
+#resume_download  {
+    margin-top: 30px;
+    padding: 10px 10px;
+    border: 1px solid var(--text-color);
+    border-radius: 5px;
+}
+
+#resume_download:hover, #resume_download:focus {
+    color: var(--accent);
+    text-decoration: unset;
+}
+
 @media (max-width: 768px) {
-    #hero_section, #about_section {
+
+    #hero_section,
+    #about_section {
         padding: 0px 35px;
-    }   
+    }
 
 }
 
@@ -237,6 +255,7 @@ body {
     #header_bg {
         display: block;
     }
+
     #email_wrapper {
         right: 20px;
         z-index: 20;
@@ -259,6 +278,24 @@ body {
     #social_links::after {
         content: none;
     }
+
+#hero_section p {
+        font-size: var(--font-md);
+
+}
+
+#hero_section p span.font-xxl, #hero_section p span.font-xl {
+        font-size: var(--font-lg);
+
+}
+
+    #about_section p:not(.accent-color) {
+        font-size: var(--font-md);
+    }
+
+    #about_section p.accent-color {
+        font-size: var(--font-lg);
+    }
 }
 
 @media (max-width: 390px) {
@@ -266,13 +303,16 @@ body {
     #header_bg {
         height: 100px;
     }
+
     #email_wrapper {
         right: 20px;
         top: 30px;
     }
+
     #email_wrapper a {
         font-size: var(--font-sm);
     }
+
     #email_wrapper a::after {
         width: 100%;
         top: 20px;
