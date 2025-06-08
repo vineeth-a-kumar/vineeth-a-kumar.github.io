@@ -210,6 +210,11 @@ body {
     gap: 10px;
 }
 
+#more_options li a[disabled] {
+    color: var(--text-light-color);
+    pointer-events: none;
+}
+
 #about_section {
     margin: 150px 0 50px;
     /* height: 97vh; */
@@ -230,14 +235,15 @@ body {
     z-index: 10;
 }
 
-#resume_download  {
+#resume_download {
     margin-top: 30px;
     padding: 10px 10px;
     border: 1px solid var(--text-color);
     border-radius: 5px;
 }
 
-#resume_download:hover, #resume_download:focus {
+#resume_download:hover,
+#resume_download:focus {
     color: var(--accent);
     text-decoration: unset;
 }
@@ -279,15 +285,16 @@ body {
         content: none;
     }
 
-#hero_section p {
+    #hero_section p {
         font-size: var(--font-md);
 
-}
+    }
 
-#hero_section p span.font-xxl, #hero_section p span.font-xl {
+    #hero_section p span.font-xxl,
+    #hero_section p span.font-xl {
         font-size: var(--font-lg);
 
-}
+    }
 
     #about_section p:not(.accent-color) {
         font-size: var(--font-md);
