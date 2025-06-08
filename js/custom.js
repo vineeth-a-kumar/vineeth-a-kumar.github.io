@@ -5,14 +5,14 @@ Licence under Creative Commons Attribution 3.0
 Do not remove the back-link in this web template
 -------------------------------------------------------*/
 
-$(window).load(function() {
+$(window).load(function () {
     jQuery('#all').click();
     return false;
 });
 
-$(document).ready(function() {
+$(document).ready(function () {
     $('#header_wrapper').scrollToFixed();
-    $('.res-nav_click').click(function() {
+    $('.res-nav_click').click(function () {
         $('.main-nav').slideToggle();
         return false
 
@@ -36,9 +36,9 @@ $(document).ready(function() {
         scrollThreshold: 0.2,
         filter: '',
         easing: 'swing',
-        begin: function() {
+        begin: function () {
         },
-        end: function() {
+        end: function () {
             if (!$('#main-nav ul li:first-child').hasClass('active')) {
                 $('.header').addClass('addBg');
             } else {
@@ -46,7 +46,7 @@ $(document).ready(function() {
             }
 
         },
-        scrollChange: function($currentListItem) {
+        scrollChange: function ($currentListItem) {
             if (!$('#main-nav ul li:first-child').hasClass('active')) {
                 $('.header').addClass('addBg');
             } else {
@@ -67,7 +67,7 @@ $(document).ready(function() {
         layoutMode: 'fitRows'
     });
 
-    $('#filters a').click(function() {
+    $('#filters a').click(function () {
         $('#filters a').removeClass('active');
         $(this).addClass('active');
         var selector = $(this).attr('data-filter');
@@ -101,7 +101,7 @@ $(document).ready(function() {
             columnNumb = splitColumns(),
             postWidth = Math.floor(winWidth / columnNumb);
 
-        container.find('.portfolio-item').each(function() {
+        container.find('.portfolio-item').each(function () {
             $(this).css({
                 width: postWidth + 'px'
             });
@@ -113,16 +113,46 @@ $(document).ready(function() {
         container.isotope('reLayout');
     }
 
-    container.imagesLoaded(function() {
+    container.imagesLoaded(function () {
         setColumns();
     });
 
 
-    $(window).bind('resize', function() {
+    $(window).bind('resize', function () {
         setProjects();
     });
 
-   $(".fancybox").fancybox();
+    $(".fancybox").fancybox();
+
+
+
+
+
+
+
+
+    $('#toggle').click(function () {
+        console.log('toggle clicked')
+        if ($('#toggle span#left').hasClass('d-none')) {
+
+            $('#toggle span#left').addClass('d-block');
+            $('#toggle span#left').removeClass('d-none');
+        } else {
+            $('#toggle span#left').addClass('d-none');
+            $('#toggle span#left').removeClass('d-block');
+        }
+        if ($('#toggle span#right').hasClass('d-none')) {
+
+            $('#toggle span#right').addClass('d-block');
+            $('#toggle span#right').removeClass('d-none');
+        } else {
+            $('#toggle span#right').addClass('d-none');
+            $('#toggle span#right').removeClass('d-block');
+        }
+        $('#more_options').slideToggle();
+        return false
+
+    });
 });
 
 wow = new WOW({
@@ -138,3 +168,8 @@ wow.init();
 //     section.className = 'wow lightSpeedIn';
 //     this.parentNode.insertBefore(section, this);
 // };
+
+
+
+
+
