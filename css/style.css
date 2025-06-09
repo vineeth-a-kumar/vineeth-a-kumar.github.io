@@ -210,9 +210,15 @@ body {
     gap: 10px;
 }
 
+
+
 #more_options li a[disabled] {
     color: var(--text-light-color);
     pointer-events: none;
+}
+
+#more_options li a i {
+    width: 15px;
 }
 
 #about_section {
@@ -273,12 +279,18 @@ body {
         left: 0;
     }
 
+
+
     #social_links {
         top: 100px;
         right: 20px;
         bottom: unset;
         left: unset;
         z-index: 20;
+    }
+
+    #social_links.d-none {
+        display: block;
     }
 
     #social_links::after {
